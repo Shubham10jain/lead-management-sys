@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LexLead Portal - Attorney Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "surface-dim": "#d8dadc",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-tertiary-container": "#8191a9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-surface-variant": "#45474c",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "on-secondary-container": "#fefcff",
+                        "outline": "#75777d",
+                        "background": "#f7f9fb",
+                        "primary-fixed": "#d8e3fb",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#1a2a3e",
+                        "surface-container-high": "#e6e8ea",
+                        "tertiary": "#041528",
+                        "on-primary-fixed": "#111c2d",
+                        "tertiary-fixed": "#d3e4fe",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "on-secondary-fixed": "#001a42",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#2170e4",
+                        "secondary": "#0058be",
+                        "on-secondary-fixed-variant": "#004395",
+                        "on-primary-fixed-variant": "#3c475a",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#d8e2ff",
+                        "outline-variant": "#c5c6cd",
+                        "on-primary-container": "#8590a6",
+                        "surface-tint": "#545f73",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "primary-fixed-dim": "#bcc7de",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#bcc7de",
+                        "primary": "#091426",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#1e293b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "container-max": "1440px",
+                        "3xl": "64px",
+                        "gutter": "24px",
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "code-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .form-input-shadow:focus {
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- Split Screen Container -->
+<main class="flex w-full min-h-screen overflow-hidden">
+<!-- Left Side: Brand Anchor & Visuals -->
+<section class="hidden lg:flex lg:w-1/2 bg-primary relative flex-col justify-between p-2xl">
+<!-- Atmospheric Shader Overlay -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+
+</div>
+<div class="relative z-10">
+<!-- Brand Identity -->
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-primary text-headline-md" style="font-variation-settings: 'FILL' 1;">balance</span>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">LexLead Portal</h1>
+</div>
+</div>
+<div class="relative z-10 max-w-md">
+<h2 class="font-display-lg text-display-lg text-on-primary mb-md">Attorney Portal.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container leading-relaxed">
+                    Securely manage your lead pipeline and outreach with enterprise-grade legal analytics and secure communication tools.
+                </p>
+</div>
+<div class="relative z-10 grid grid-cols-2 gap-lg pt-2xl border-t border-on-primary-fixed-variant">
+<div>
+<p class="font-headline-md text-headline-md text-on-primary">2.4k+</p>
+<p class="font-label-md text-label-md text-on-primary-container uppercase">Active Firms</p>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-primary">99.9%</p>
+<p class="font-label-md text-label-md text-on-primary-container uppercase">Uptime SLA</p>
+</div>
+</div>
+</section>
+<!-- Right Side: Login Form -->
+<section class="w-full lg:w-1/2 bg-surface-container-lowest flex items-center justify-center p-md md:p-2xl">
+<div class="w-full max-w-[440px] space-y-xl">
+<!-- Form Header -->
+<div class="space-y-sm">
+<h3 class="font-headline-lg text-headline-lg text-primary">Attorney Login</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your credentials to access the secure portal.</p>
+</div>
+<!-- Auth Actions -->
+<div class="space-y-md">
+<!-- Google SSO -->
+<button class="w-full flex items-center justify-center gap-md py-md px-lg bg-white border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-all duration-200 cursor-pointer active:opacity-80">
+<img alt="Google Logo" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoNds71_1FVY_9_0LTh4--rA-_nGJDdSFDZuxRH6WGIBQyCMjJ2HCfHMy39lDIlZbTl4Dz990kCuZwxNiO5d5N-hdt4cA9-4pJSMo4hKhbRDfwL01YlV5rQLYc5MhpQcSHyC084RfBXuCsnY6bkmmCQyjS0fNMY0CbphTrM1hVVm0u4W_mTpUMBbtT3Zrne7o77Ki8hf91_NmMSkl8WhHsaovKkKLPGf4B7FWRtCuU280IbQ39eo4E_XC_LTVh9lgI3ZsoUB-vyg4"/>
+                        Sign in with Google
+                    </button>
+<!-- Separator -->
+<div class="relative flex items-center py-md">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink mx-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Or continue with email</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<!-- Email Form -->
+<form class="space-y-lg" onsubmit="event.preventDefault();">
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">Legal Email Address</label>
+<input class="w-full px-md py-md bg-white border border-outline-variant rounded focus:ring-0 focus:border-secondary outline-none transition-all form-input-shadow text-body-md" id="email" placeholder="name@firm.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<div class="flex justify-between">
+<label class="font-label-md text-label-md text-on-surface" for="password">Password</label>
+<a class="font-label-md text-label-md text-secondary hover:underline" href="#">Forgot Password?</a>
+</div>
+<input class="w-full px-md py-md bg-white border border-outline-variant rounded focus:ring-0 focus:border-secondary outline-none transition-all form-input-shadow text-body-md" id="password" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex items-center gap-sm">
+<input class="w-4 h-4 rounded border-outline-variant text-secondary focus:ring-secondary" id="remember" type="checkbox"/>
+<label class="font-body-sm text-body-sm text-on-surface-variant cursor-pointer" for="remember">Remember me for 30 days</label>
+</div>
+<button class="w-full py-md px-lg bg-secondary text-on-secondary rounded font-headline-sm text-headline-sm flex items-center justify-center gap-sm hover:brightness-110 transition-all duration-200 cursor-pointer" type="submit">
+                            Sign In
+                            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">login</span>
+</button>
+</form>
+</div>
+<!-- Footer Link -->
+<div class="pt-xl border-t border-outline-variant text-center">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Are you a prospect? 
+                        <a class="text-secondary font-semibold hover:underline ml-xs" href="#">Log in to your personal dashboard here.</a>
+</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer (Suppressed for focused login journey per Shell Visibility Rule) -->
+<!-- The Shell Visibility & Relevance mandate suggests suppressing the navigation shell on Transactional/Login pages to prioritize focus. -->
+<script>
+        // Micro-interaction for form button
+        const loginBtn = document.querySelector('button[type="submit"]');
+        if (loginBtn) {
+            loginBtn.addEventListener('mousedown', () => {
+                loginBtn.style.transform = 'scale(0.98)';
+            });
+            loginBtn.addEventListener('mouseup', () => {
+                loginBtn.style.transform = 'scale(1)';
+            });
+        }
+
+        // Add subtle hover tracking effect to the left panel
+        const leftPanel = document.querySelector('section.bg-primary');
+        if (leftPanel) {
+            leftPanel.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                const x = (clientX / window.innerWidth) * 10;
+                const y = (clientY / window.innerHeight) * 10;
+                leftPanel.style.backgroundPosition = `${x}% ${y}%`;
+            });
+        }
+    </script>
+</body></html>

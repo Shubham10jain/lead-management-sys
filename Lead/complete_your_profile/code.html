@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en" class="light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#45474c",
+                    "primary-container": "#1e293b",
+                    "on-primary-fixed": "#111c2d",
+                    "on-background": "#191c1e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#1a2a3e",
+                    "on-secondary-fixed-variant": "#004395",
+                    "background": "#f7f9fb",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "primary": "#091426",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-primary-container": "#8590a6",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-tertiary-container": "#8191a9",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c5c6cd",
+                    "outline": "#75777d",
+                    "primary-fixed-dim": "#bcc7de",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#d8e2ff",
+                    "primary-fixed": "#d8e3fb",
+                    "secondary": "#0058be",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#fefcff",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-fixed": "#d3e4fe",
+                    "tertiary": "#041528",
+                    "surface-bright": "#f7f9fb",
+                    "surface-tint": "#545f73",
+                    "secondary-container": "#2170e4",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#bcc7de",
+                    "on-surface": "#191c1e",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "surface-dim": "#d8dadc",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#e6e8ea"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "xl": "32px",
+                    "2xl": "48px",
+                    "sm": "8px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "3xl": "64px",
+                    "md": "16px",
+                    "container-max": "1440px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "code-sm": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background text-on-background font-body-md min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation (Shell Rule: Suppressed for Transactional, but Brand Identity Maintained via Header) -->
+<header class="w-full h-16 flex items-center px-lg bg-surface-container-lowest border-b border-outline-variant z-50">
+<div class="max-w-container-max mx-auto w-full flex justify-between items-center">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 bg-primary rounded flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">LeadSync Pro</span>
+</div>
+<div class="text-on-surface-variant font-label-md uppercase tracking-widest">
+                Onboarding Portal
+            </div>
+</div>
+</header>
+<main class="flex-grow relative flex items-center justify-center py-2xl px-md">
+<!-- Atmospheric Background Element -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute -top-1/4 -right-1/4 w-[600px] h-[600px] bg-secondary-fixed-dim/20 rounded-full blur-[120px]"></div>
+<div class="absolute -bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary-fixed-dim/10 rounded-full blur-[100px]"></div>
+</div>
+<!-- Onboarding Container -->
+<div class="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-12 gap-gutter relative z-10">
+<!-- Left Sidebar: Progress & Brand Message -->
+<div class="lg:col-span-4 flex flex-col justify-between py-md">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-md">Final Step</h1>
+<p class="text-on-surface-variant font-body-md leading-relaxed">
+                        Complete your professional profile to unlock access to the LeadSync enterprise network. Your details help us match you with the right opportunities.
+                    </p>
+<div class="mt-xl space-y-lg">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-bold text-label-md">1</div>
+<div class="flex flex-col">
+<span class="font-label-md text-primary">Identity Verified</span>
+<span class="text-xs text-on-surface-variant">Account creation successful</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full border-2 border-secondary bg-surface-container-lowest text-secondary flex items-center justify-center font-bold text-label-md">2</div>
+<div class="flex flex-col">
+<span class="font-label-md text-primary">Professional Profile</span>
+<span class="text-xs text-on-surface-variant">We're here now</span>
+</div>
+</div>
+<div class="flex items-center gap-md opacity-40">
+<div class="w-8 h-8 rounded-full border-2 border-outline text-outline flex items-center justify-center font-bold text-label-md">3</div>
+<div class="flex flex-col">
+<span class="font-label-md text-primary">Dashboard Access</span>
+<span class="text-xs text-on-surface-variant">Unlocking ecosystem</span>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden lg:block">
+<div class="p-md rounded-xl bg-surface-container-high/50 border border-outline-variant flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<p class="text-xs text-on-surface-variant">Your data is secured with enterprise-grade AES-256 encryption.</p>
+</div>
+</div>
+</div>
+<!-- Right Content: Form Card -->
+<div class="lg:col-span-8">
+<div class="glass-panel rounded-2xl p-xl shadow-sm">
+<form action="#" method="POST" class="space-y-lg">
+<!-- Header & Read Only Email -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-md border-b border-outline-variant pb-lg mb-lg">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Complete Profile</h2>
+<p class="text-body-sm text-on-surface-variant">Fields marked with * are required.</p>
+</div>
+<div class="bg-surface-container-low px-md py-sm rounded-lg border border-outline-variant flex items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">lock</span>
+<div class="flex flex-col">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-tighter">Registered Email</span>
+<span class="font-code-sm text-code-sm text-primary">alex.prospect@enterprise.com</span>
+</div>
+</div>
+</div>
+<!-- Name Inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label for="first_name" class="font-label-md text-primary">First Name *</label>
+<input type="text" id="first_name" name="first_name" required="" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-primary placeholder-on-surface-variant/40" placeholder="Enter first name">
+</div>
+<div class="space-y-xs">
+<label for="last_name" class="font-label-md text-primary">Last Name *</label>
+<input type="text" id="last_name" name="last_name" required="" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-primary placeholder-on-surface-variant/40" placeholder="Enter last name">
+</div>
+</div>
+<!-- Location & Visa -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs relative">
+<label for="location" class="font-label-md text-primary">Location (City, State) *</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">location_on</span>
+<input type="text" id="location" name="location" required="" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-md py-sm font-body-md text-primary placeholder-on-surface-variant/40" placeholder="e.g. San Francisco, CA">
+</div>
+</div>
+<div class="space-y-xs">
+<label for="visa_status" class="font-label-md text-primary">Current Visa Status *</label>
+<select id="visa_status" name="visa_status" required="" class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-md py-sm font-body-md text-primary focus:ring-0 focus:border-secondary cursor-pointer">
+<option value="" disabled="" selected="">Select status</option>
+<option value="citizen">U.S. Citizen</option>
+<option value="permanent_resident">Permanent Resident (Green Card)</option>
+<option value="h1b">H1-B Visa</option>
+<option value="f1">F-1 (OPT/CPT)</option>
+<option value="other">Other / Requires Sponsorship</option>
+</select>
+</div>
+</div>
+<!-- Resume Upload -->
+<div class="space-y-xs">
+<label class="font-label-md text-primary">Resume / CV Upload *</label>
+<div class="relative group">
+<input type="file" id="resume_upload" name="resume_upload" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20">
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center gap-sm bg-surface-container-lowest group-hover:border-secondary group-hover:bg-secondary/5 transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">cloud_upload</span>
+</div>
+<div class="text-center">
+<p class="font-body-md text-primary">Click to upload or drag and drop</p>
+<p class="text-body-sm text-on-surface-variant">PDF, DOCX up to 10MB</p>
+</div>
+</div>
+<!-- Progress Sim (Hidden by default) -->
+<div id="upload_progress" class="hidden absolute inset-0 bg-surface-container-lowest/90 z-30 flex flex-col items-center justify-center p-xl rounded-xl">
+<div class="w-full max-w-xs bg-outline-variant h-1 rounded-full overflow-hidden mb-sm">
+<div class="bg-secondary h-full w-[65%] transition-all duration-500"></div>
+</div>
+<p class="text-xs font-bold text-secondary uppercase">Uploading Profile Data...</p>
+</div>
+</div>
+</div>
+<!-- Submit Action -->
+<div class="pt-lg flex flex-col sm:flex-row items-center justify-between gap-md">
+<p class="text-xs text-on-surface-variant max-w-[280px]">
+                                By clicking 'Finalize Setup', you agree to our 
+                                <a href="#" class="text-secondary hover:underline">Professional Services Terms</a>.
+                            </p>
+<button type="submit" class="w-full sm:w-auto bg-primary text-on-primary px-3xl py-md rounded-lg font-headline-sm hover:bg-primary-container transition-all active:scale-95 flex items-center justify-center gap-sm shadow-lg shadow-primary/10">
+                                Finalize Setup
+                                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+<!-- Quick Navigation Back -->
+<div class="mt-lg flex justify-center">
+<button class="text-on-surface-variant hover:text-primary font-label-md flex items-center gap-xs transition-colors">
+<span class="material-symbols-outlined text-[16px]">logout</span>
+                        Save progress &amp; logout
+                    </button>
+</div>
+</div>
+</div>
+<!-- Secondary Visual Element: Bento-style data point -->
+<div class="hidden xl:block absolute right-24 top-1/2 -translate-y-1/2 w-64 space-y-md pointer-events-none">
+<div class="glass-panel p-md rounded-xl transform rotate-3 shadow-sm border-l-4 border-l-secondary">
+<span class="material-symbols-outlined text-secondary mb-xs">auto_awesome</span>
+<h4 class="text-primary font-bold text-body-sm">AI Matchmaking</h4>
+<p class="text-[11px] text-on-surface-variant">Your resume is parsed in real-time to highlight key competencies to hiring managers.</p>
+</div>
+<div class="glass-panel p-md rounded-xl transform -rotate-2 shadow-sm">
+<div class="flex items-center gap-sm mb-xs">
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[10px] font-bold uppercase text-on-surface-variant">Active Recruitment</span>
+</div>
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Close up professional portrait of a tech executive, soft studio lighting, neutral background, minimalist corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_-LkLjt9Ga1-tPh8OojmlU6IU-xIrpEcTUUN04eNZonVEaH9z_X2WGn04cGylUeNsQ5qaazIgmOwbBAj8PpkTpq6paJbpvuIhDq7Szybzqhgybrt1KNtVuYSuG0f35juaTSnyQIrn2HY2sMhbz00Cb2Fh_9WfVs8A72FSydHP8GkNvUzOEGLRnmBIDCJmO9twqQnyBwJ93__HWQHWlSYmORR7TNO0M6O8VcvH9SnZUA27A1CpyQfw0wpkKBzWVn7GHU8YxQ7SrGo">
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Close up professional portrait of a senior HR manager, warm natural lighting, blurred office interior background, high-end professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPpMp8iCzae08kfSuqABD_21imKMOrFygj4joWPb0ZpKSRqKy35jbd2WARdE6VyVkK60UAiWGrQiv2PhnUlViUCIosEHZ8hYCTfhn10WMe04wiTQNx3k0QUPbIMECSfmS2yz-h6AEqKGvMU_BomxNOMZMVwnEhc5990T5-CGrNJ76fc_PBlo5Hdsm5D9whfCl1RjFasI3nYKu8Y6cmaaASbUtJniHYblRrwoO6XnBKpZMWvsaztq2di1zr7I0EjMmMUC2QhZEE7I8">
+</div>
+<div class="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Close up professional portrait of a lead software engineer, modern tech office lighting, cool blue tones, professional headshot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNY0BEMj7rAJAJvwF2Rn2oHpG0-99iVlGNXhtCmLx2hK7sgSUUTNl43MhNVFncO2eaT3wgl1ICrm-Ld9k-b8t-BtLdCaq_ZwTNgNLxIAW7g1zOY4hw3gxdvTh5JwqzVI8SyLAW8c96Nu4SNtSHZUs4AJqvhekudwKSBuMaCgvjDkgj_QV50G6N7VbxdGfYlFDZYy04qlahE4XqctJ1ZszBDQcfBpQomf4sW08OZq9it5ULvj-MlKykf3VTJ8l1SfTixcEbWwZBdG0">
+</div>
+</div>
+<p class="text-[10px] text-primary font-bold mt-2">12 Teams viewing candidates</p>
+</div>
+</div>
+</main>
+<!-- Footer (Shell Rule: Matches JSON footer style) -->
+<footer class="w-full py-xl bg-surface-container-lowest border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-lg flex flex-col md:flex-row justify-between items-center gap-md">
+<div class="flex items-center gap-xs">
+<span class="font-label-md text-label-md text-primary font-bold">LeadSync Pro</span>
+<span class="text-on-surface-variant text-body-sm">© 2024. All rights reserved.</span>
+</div>
+<div class="flex gap-lg">
+<a class="text-body-sm text-on-surface-variant hover:text-secondary underline transition-all" href="#">Privacy Policy</a>
+<a class="text-body-sm text-on-surface-variant hover:text-secondary underline transition-all" href="#">Terms of Service</a>
+<a class="text-body-sm text-on-surface-variant hover:text-secondary underline transition-all" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for file upload
+        const fileInput = document.getElementById('resume_upload');
+        const progressOverlay = document.getElementById('upload_progress');
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                progressOverlay.classList.remove('hidden');
+                // Simulate upload
+                setTimeout(() => {
+                    progressOverlay.innerHTML = `
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mb-sm">
+                            <span class="material-symbols-outlined text-[32px]">check_circle</span>
+                        </div>
+                        <p class="text-body-sm font-bold text-primary">${e.target.files[0].name}</p>
+                        <button type="button" onclick="window.location.reload()" class="mt-md text-xs text-on-surface-variant hover:text-error underline">Remove and replace</button>
+                    `;
+                }, 1500);
+            }
+        });
+
+        // Form submission animation
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Processing...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                alert('Profile Successfully Completed! Redirecting to dashboard...');
+                // In a real app: window.location.href = '/dashboard';
+            }, 2000);
+        });
+    </script>
+</body></html>

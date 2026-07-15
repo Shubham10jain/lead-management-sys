@@ -1,0 +1,420 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>LeadSync Pro | Sales Ops Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed": "#001a42",
+                    "surface-variant": "#e0e3e5",
+                    "secondary-container": "#2170e4",
+                    "tertiary-container": "#1a2a3e",
+                    "inverse-surface": "#2d3133",
+                    "surface-tint": "#545f73",
+                    "outline": "#75777d",
+                    "surface-dim": "#d8dadc",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-container": "#8590a6",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "error": "#ba1a1a",
+                    "on-surface": "#191c1e",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "tertiary": "#041528",
+                    "on-error": "#ffffff",
+                    "secondary-fixed": "#d8e2ff",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "primary-fixed": "#d8e3fb",
+                    "on-surface-variant": "#45474c",
+                    "surface-bright": "#f7f9fb",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "primary": "#091426",
+                    "surface-container-low": "#f2f4f6",
+                    "outline-variant": "#c5c6cd",
+                    "primary-fixed-dim": "#bcc7de",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#1e293b",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-high": "#e6e8ea",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#8191a9",
+                    "surface-container": "#eceef0",
+                    "on-primary-fixed": "#111c2d",
+                    "secondary": "#0058be",
+                    "background": "#f7f9fb",
+                    "inverse-primary": "#bcc7de",
+                    "on-background": "#191c1e",
+                    "on-secondary-container": "#fefcff",
+                    "on-secondary-fixed-variant": "#004395"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "2xl": "48px",
+                    "lg": "24px",
+                    "container-max": "1440px",
+                    "xl": "32px",
+                    "gutter": "24px",
+                    "xs": "4px",
+                    "md": "16px",
+                    "3xl": "64px",
+                    "sm": "8px"
+            },
+            "fontFamily": {
+                    "code-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .tonal-layer-1 {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+        .status-badge {
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+        .status-pending { background-color: #fef3c7; color: #92400e; }
+        .status-reached { background-color: #dcfce7; color: #166534; }
+    </style>
+</head>
+<body class="flex min-h-screen overflow-hidden">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-surface-container-low dark:bg-surface-container-highest border-r border-outline-variant dark:border-outline p-md gap-sm">
+<div class="flex items-center gap-sm px-sm mb-lg">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed">Sales Ops</h2>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest opacity-70">Enterprise Tier</p>
+</div>
+</div>
+<button class="w-full py-md px-lg bg-secondary text-on-secondary rounded-lg font-label-md text-label-md flex items-center justify-center gap-sm mb-md hover:bg-opacity-90 transition-all active:scale-95">
+<span class="material-symbols-outlined">add</span>
+            Add New Lead
+        </button>
+<nav class="flex-1 flex flex-col gap-xs">
+
+<a class="flex items-center gap-md p-md font-label-md text-label-md bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Leads
+            </a>
+
+
+<a class="flex items-center gap-md p-md font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto pt-md border-t border-outline-variant/30">
+<a class="flex items-center gap-md p-md font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high dark:hover:bg-surface-variant rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+</div>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Component -->
+<header class="flex justify-between items-center w-full px-lg h-16 bg-surface-container-lowest dark:bg-inverse-surface border-b border-outline-variant dark:border-outline">
+<div class="flex items-center gap-lg">
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">LeadSync Pro</h1>
+<div class="hidden md:flex relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-lg py-sm font-body-md text-body-md focus:ring-2 focus:ring-secondary/20 w-64" placeholder="Search leads..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-xs"></div>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary flex items-center justify-center text-on-tertiary font-bold text-xs">JD</div>
+<span class="hidden lg:block font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">John Doe</span>
+</div>
+</div>
+</header>
+<!-- Canvas Content -->
+<section class="flex-1 overflow-y-auto p-lg lg:p-2xl">
+<div class="max-w-container-max mx-auto space-y-lg">
+<!-- Page Title & Stats Bento -->
+<div class="flex flex-col lg:flex-row justify-between items-end gap-lg mb-xl">
+<div class="w-full lg:w-auto">
+<nav class="flex gap-xs mb-xs">
+<span class="font-label-md text-label-md text-on-surface-variant">Home</span>
+<span class="font-label-md text-label-md text-on-surface-variant">/</span>
+<span class="font-label-md text-label-md text-secondary font-bold">Lead Management</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-primary">Active Lead Pipeline</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and respond to inbound inquiries in real-time.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-sm w-full lg:w-auto">
+<div class="tonal-layer-1 p-md rounded-xl flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant">TOTAL LEADS</span>
+<span class="font-headline-md text-headline-md text-primary">1,284</span>
+</div>
+<div class="tonal-layer-1 p-md rounded-xl flex flex-col border-l-4 border-l-secondary">
+<span class="font-label-md text-label-md text-on-surface-variant">PENDING</span>
+<span class="font-headline-md text-headline-md text-primary">42</span>
+</div>
+<div class="tonal-layer-1 p-md rounded-xl flex flex-col hidden sm:flex">
+<span class="font-label-md text-label-md text-on-surface-variant">CONV. RATE</span>
+<span class="font-headline-md text-headline-md text-secondary">24.8%</span>
+</div>
+</div>
+</div>
+<!-- Table Container -->
+<div class="tonal-layer-1 rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="bg-slate-50 border-b border-outline-variant px-lg py-md flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs px-md py-sm bg-white border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span class="font-label-md text-label-md">Filter</span>
+</div>
+<div class="flex items-center gap-xs px-md py-sm bg-white border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+<span class="font-label-md text-label-md">Sort by Date</span>
+</div>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Showing 8 of 42 results</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-slate-50/50 border-b border-outline-variant">
+<tr>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Name</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Email</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Submission Date</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Status</th>
+<th class="px-lg py-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 (Pending) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-bold">AS</div>
+<span class="font-body-md text-body-md font-semibold text-primary">Alex Sterling</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">alex.sterling@enterprise.com</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">Oct 24, 2023</td>
+<td class="px-lg py-lg">
+<span class="status-badge status-pending">PENDING</span>
+</td>
+<td class="px-lg py-lg text-right">
+<button class="mark-btn font-label-md text-label-md text-secondary border border-secondary/20 px-md py-sm rounded-lg hover:bg-secondary hover:text-white transition-all active:scale-95" onclick="markReached(this)">
+                                            Mark as Reached Out
+                                        </button>
+</td>
+</tr>
+<!-- Row 2 (Reached Out) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-bold">MK</div>
+<span class="font-body-md text-body-md font-semibold text-primary">Morgan Knight</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">m.knight@techflow.io</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">Oct 23, 2023</td>
+<td class="px-lg py-lg">
+<span class="status-badge status-reached">REACHED_OUT</span>
+</td>
+<td class="px-lg py-lg text-right">
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-sm hover:bg-surface-container-high rounded-full">more_vert</button>
+</td>
+</tr>
+<!-- Row 3 (Pending) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-700 font-bold">JB</div>
+<span class="font-body-md text-body-md font-semibold text-primary">Jordan Blake</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">jordan@blake-logistics.com</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">Oct 23, 2023</td>
+<td class="px-lg py-lg">
+<span class="status-badge status-pending">PENDING</span>
+</td>
+<td class="px-lg py-lg text-right">
+<button class="mark-btn font-label-md text-label-md text-secondary border border-secondary/20 px-md py-sm rounded-lg hover:bg-secondary hover:text-white transition-all active:scale-95" onclick="markReached(this)">
+                                            Mark as Reached Out
+                                        </button>
+</td>
+</tr>
+<!-- Row 4 (Reached Out) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-fixed-variant font-bold">CR</div>
+<span class="font-body-md text-body-md font-semibold text-primary">Casey Rivers</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">casey@riverstone.co</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">Oct 22, 2023</td>
+<td class="px-lg py-lg">
+<span class="status-badge status-reached">REACHED_OUT</span>
+</td>
+<td class="px-lg py-lg text-right">
+<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-sm hover:bg-surface-container-high rounded-full">more_vert</button>
+</td>
+</tr>
+<!-- Row 5 (Pending) -->
+<tr class="hover:bg-slate-50/50 transition-colors group">
+<td class="px-lg py-lg">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed font-bold">TL</div>
+<span class="font-body-md text-body-md font-semibold text-primary">Taylor Long</span>
+</div>
+</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">taylor@nexus.dev</td>
+<td class="px-lg py-lg font-body-md text-body-md text-on-surface-variant">Oct 22, 2023</td>
+<td class="px-lg py-lg">
+<span class="status-badge status-pending">PENDING</span>
+</td>
+<td class="px-lg py-lg text-right">
+<button class="mark-btn font-label-md text-label-md text-secondary border border-secondary/20 px-md py-sm rounded-lg hover:bg-secondary hover:text-white transition-all active:scale-95" onclick="markReached(this)">
+                                            Mark as Reached Out
+                                        </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer / Pagination -->
+<div class="border-t border-outline-variant px-lg py-md flex items-center justify-between bg-white">
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing 1 to 5 of 42 entries</p>
+<div class="flex gap-xs">
+<button class="p-sm rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-md py-sm rounded-lg bg-secondary text-white font-label-md text-label-md">1</button>
+<button class="px-md py-sm rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md">2</button>
+<button class="px-md py-sm rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors font-label-md text-label-md">3</button>
+<button class="p-sm rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Card / Empty State Visualization -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mt-xl">
+
+
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation Shell -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-around px-md z-50">
+<button class="flex flex-col items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-bold">Leads</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">leaderboard</span>
+<span class="text-[10px] font-bold">Stats</span>
+</button>
+<button class="flex flex-col items-center gap-xs text-on-surface-variant">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-bold">Set</span>
+</button>
+</nav>
+<script>
+        function markReached(btn) {
+            const row = btn.closest('tr');
+            const badge = row.querySelector('.status-badge');
+            
+            // Subtle transition animation
+            btn.classList.add('opacity-50', 'pointer-events-none');
+            btn.textContent = 'Updating...';
+            
+            setTimeout(() => {
+                badge.classList.remove('status-pending');
+                badge.classList.add('status-reached');
+                badge.textContent = 'REACHED_OUT';
+                
+                // Hide the button and show more options icon to match the "Reached Out" UI pattern
+                const actionsCell = btn.parentElement;
+                actionsCell.innerHTML = '<button class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity p-sm hover:bg-surface-container-high rounded-full">more_vert</button>';
+                
+                // Add a visual feedback animation to the row
+                row.classList.add('bg-green-50/50');
+                setTimeout(() => {
+                    row.classList.remove('bg-green-50/50');
+                }, 1000);
+            }, 600);
+        }
+
+        // Search bar interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-secondary/20');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-secondary/20');
+        });
+    </script>
+
+
+</body></html>

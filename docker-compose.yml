@@ -1,0 +1,20 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: sj_leads_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in a root .env file}
+      POSTGRES_DB: sj_leads
+    ports:
+      - "5433:5432"
+    volumes:
+      - sj_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sj_leads_user -d sj_leads"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  sj_postgres_data:

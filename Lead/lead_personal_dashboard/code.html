@@ -1,0 +1,326 @@
+<!DOCTYPE html><html lang="en" class="light" style=""><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#091426",
+                    "on-primary-container": "#8590a6",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container": "#eceef0",
+                    "outline-variant": "#c5c6cd",
+                    "on-secondary-container": "#fefcff",
+                    "surface-tint": "#545f73",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#d3e4fe",
+                    "surface-dim": "#d8dadc",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-primary-fixed": "#111c2d",
+                    "secondary-fixed": "#d8e2ff",
+                    "on-background": "#191c1e",
+                    "primary-fixed-dim": "#bcc7de",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-primary-fixed-variant": "#3c475a",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#041528",
+                    "on-secondary-fixed-variant": "#004395",
+                    "secondary": "#0058be",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "primary-fixed": "#d8e3fb",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#45474c",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "primary-container": "#1e293b",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "inverse-primary": "#bcc7de",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#2170e4",
+                    "surface": "#f7f9fb",
+                    "on-tertiary-container": "#8191a9",
+                    "on-surface": "#191c1e",
+                    "on-secondary-fixed": "#001a42",
+                    "inverse-surface": "#2d3133",
+                    "outline": "#75777d",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#1a2a3e",
+                    "background": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "2xl": "48px",
+                    "xs": "4px",
+                    "sm": "8px",
+                    "3xl": "64px",
+                    "gutter": "24px",
+                    "md": "16px",
+                    "base": "4px",
+                    "xl": "32px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "code-sm": ["JetBrains Mono"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "code-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="bg-background font-body-md text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Header: TopNavBar (Mapped from JSON) -->
+<header class="bg-surface-container-lowest dark:bg-primary-container border-b border-outline-variant dark:border-primary-fixed-dim shadow-sm dark:shadow-none sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto h-16">
+<div class="flex items-center gap-xl">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-secondary-fixed tracking-tight">LeadSync Pro</span>
+<nav class="hidden md:flex gap-lg items-center h-full">
+
+
+
+<a href="#" class="font-label-md text-label-md text-secondary border-b-2 border-secondary pb-1 cursor-pointer active:opacity-80">Profile</a><a href="#" class="font-label-md text-label-md text-on-surface-variant hover:text-secondary pb-1 cursor-pointer transition-colors active:opacity-80">Story</a>
+</nav>
+</div>
+<div class="flex items-center gap-md">
+<div class="hidden md:flex bg-surface-container rounded-full px-md py-xs items-center gap-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<input type="text" placeholder="Search resources..." class="bg-transparent border-none focus:ring-0 text-body-sm w-48">
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors cursor-pointer p-xs">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-secondary transition-colors cursor-pointer p-xs">settings</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a corporate attorney with a friendly expression, wearing a navy blue tailored suit. The background is a blurred high-end office interior with warm lighting and wooden accents. The photography style is sharp, clean, and modern, fitting an enterprise software profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuI0PfeEmuTvl08aF73LOrHhS5RPDj56i-uT8uXOBu36u_KJyLr7Y5z3V9xkbDOQ8Nm9yE_TCVdk9iLOWRZGAGZAFQdGBNxqsN6S-xtvoBJPFRfqnZ40g7zT3RxwiYXe4ZCWlyn4sXdYnHrPRSyAD2kranq76HDECsZsWXjnBhRQILvz5RjN43MKqScTGG5Sp7PUAhif7ttpdidHX7c0T6rm-hFHHp-w4uPSCwMAxOsTEQSSTSm4hmQLHXd1FYXtdJbwztMveHvn4">
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-lg py-xl min-h-screen">
+<div class="grid grid-cols-12 gap-lg">
+<!-- Welcome Header -->
+<div class="col-span-12 mb-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary">Candidate Dashboard</h1>
+<p class="font-body-md text-on-surface-variant mt-xs">Manage your profile and track your application progress in real-time.</p>
+</div>
+<!-- Left Column: Profile Card -->
+<div class="col-span-12 lg:col-span-8">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-xl border-b border-outline-variant bg-surface-container-low">
+<h2 class="font-headline-sm text-headline-sm text-primary">My Profile</h2>
+<p class="font-body-sm text-on-surface-variant mt-xs">Update your personal information and documents.</p>
+</div>
+<form class="p-xl space-y-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- First Name -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">First Name</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none font-body-md" type="text" value="Alexander">
+</div>
+<!-- Last Name -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Last Name</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none font-body-md" type="text" value="Hamilton">
+</div>
+<!-- Email (Read Only) -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Email ID</label>
+<div class="flex items-center gap-sm bg-surface-container-low px-md py-sm border border-outline-variant rounded-lg text-on-surface-variant cursor-not-allowed">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span class="font-body-md">alexander.h@lead-sync.pro</span>
+</div>
+</div>
+<!-- Location -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Location</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none font-body-md" type="text" value="New York, USA">
+</div>
+<!-- Visa Status -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Visa Status</label>
+<select class="w-full px-md py-sm border border-outline rounded-lg focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all outline-none font-body-md bg-transparent">
+<option>Citizen</option>
+<option selected="">H1-B</option>
+<option>L1-A</option>
+<option>Student (F1)</option>
+<option>Permanent Resident</option>
+</select>
+</div>
+<!-- Resume Upload (Represented as file input area) -->
+<div class="space-y-xs">
+<label class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Resume</label>
+<div class="flex items-center justify-between p-sm border border-dashed border-outline rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="flex items-center gap-md">
+<div class="p-xs bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-primary">Alexander_Hamilton_CV_2024.pdf</span>
+<span class="text-[10px] text-on-surface-variant">PDF • 1.2 MB</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-secondary">upload</span>
+</div>
+</div>
+</div>
+<div class="pt-md flex justify-end gap-md">
+<button class="px-lg py-md border border-outline text-primary font-label-md rounded-lg hover:bg-surface-container-low transition-all active:scale-95" type="button">Cancel</button>
+<button class="px-lg py-md bg-secondary text-on-secondary font-label-md rounded-lg hover:brightness-90 transition-all shadow-sm active:scale-95" type="submit">Save Changes</button>
+</div>
+</form>
+</section>
+<!-- Additional Context: Recent Activity (Bento Grid Style) -->
+<div class="grid grid-cols-2 gap-lg mt-lg">
+
+<div class="col-span-2 md:col-span-1 bg-primary text-on-primary p-lg rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h3 class="font-headline-sm mb-xs">Need help?</h3>
+<p class="font-body-sm text-on-primary-container mb-md">Our enterprise support team is available 24/7 for premium leads.</p>
+<button class="bg-white/10 hover:bg-white/20 transition-all text-white px-md py-xs rounded-full font-label-md flex items-center gap-xs">
+                                Contact Support <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-500">support_agent</span>
+</div>
+</div>
+</div>
+<!-- Right Column: Application Status Section -->
+<aside class="col-span-12 lg:col-span-4 space-y-lg">
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+<div class="p-lg border-b border-outline-variant flex items-center justify-between">
+<h2 class="font-headline-sm text-headline-sm text-primary">Application Status</h2>
+<span class="material-symbols-outlined text-on-surface-variant" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="p-lg space-y-xl">
+<!-- Active Status Example: In Process -->
+<div class="space-y-md">
+<div class="flex flex-col gap-sm">
+<span class="font-label-md text-on-surface-variant uppercase">Current Stage</span>
+<div class="flex items-center justify-between p-md bg-[#fef9c3] border border-[#fde047] rounded-lg">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-[#854d0e]">sync</span>
+<span class="font-headline-sm text-[#854d0e]">In Process</span>
+</div>
+<span class="text-[10px] font-bold text-[#854d0e] bg-white/50 px-xs py-[2px] rounded">EST. 2 DAYS</span>
+</div>
+</div>
+<p class="font-body-sm text-on-surface-variant">Your application for <strong class="text-primary">Enterprise Ops Lead</strong> is currently being reviewed by the regional hiring team.</p>
+</div>
+<!-- Status Key / Legend -->
+<div class="pt-lg border-t border-outline-variant">
+<h4 class="font-label-md text-on-surface-variant uppercase mb-md">Status Legend</h4>
+<div class="space-y-md">
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+</div>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Yet to be reviewed</span>
+</div>
+<span class="bg-[#fee2e2] text-[#991b1b] px-sm py-[2px] rounded font-label-md">RED</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-[#fef9c3] flex items-center justify-center text-[#854d0e]">
+<span class="material-symbols-outlined text-[18px]">hourglass_empty</span>
+</div>
+<span class="font-body-md text-primary font-semibold">In Process</span>
+</div>
+<span class="bg-[#fef08a] text-[#854d0e] px-sm py-[2px] rounded font-label-md">YELLOW</span>
+</div>
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-md">
+<div class="w-8 h-8 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#166534]">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<span class="font-body-md text-on-surface-variant group-hover:text-primary transition-colors">Completed</span>
+</div>
+<span class="bg-[#bbf7d0] text-[#166534] px-sm py-[2px] rounded font-label-md">GREEN</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-lg bg-surface-container-low text-center">
+<a class="font-label-md text-secondary hover:underline flex items-center justify-center gap-xs" href="#">
+                            View Detailed Progress <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- Referral Widget -->
+
+</aside>
+</div>
+</main>
+<!-- Footer (Mapped from JSON) -->
+<footer class="bg-surface-container-lowest dark:bg-primary-container border-t border-outline-variant dark:border-primary-fixed-dim">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl max-w-container-max mx-auto w-full">
+<div class="flex flex-col items-center md:items-start gap-xs">
+<span class="font-label-md text-label-md text-primary dark:text-primary-fixed font-bold">LeadSync Pro</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container">© 2024 LeadSync Pro. All rights reserved.</span>
+</div>
+<div class="flex gap-lg mt-md md:mt-0">
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all opacity-100 hover:opacity-80" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all opacity-100 hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-secondary dark:hover:text-secondary-fixed-dim underline transition-all opacity-100 hover:opacity-80" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">sync</span> Saving...';
+            btn.classList.add('opacity-80', 'pointer-events-none');
+            
+            setTimeout(() => {
+                btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span> Saved';
+                btn.classList.replace('bg-secondary', 'bg-green-600');
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.replace('bg-green-600', 'bg-secondary');
+                    btn.classList.remove('opacity-80', 'pointer-events-none');
+                }, 2000);
+            }, 1000);
+        });
+
+        // Toggle focus state visual cues
+        const inputs = document.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-secondary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label')?.classList.remove('text-secondary');
+            });
+        });
+    </script>
+
+</body></html>
