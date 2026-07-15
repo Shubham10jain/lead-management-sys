@@ -22,11 +22,14 @@ a review pipeline, and reach out.
 ### 1. Start PostgreSQL
 
 ```bash
+cp .env.example .env   # set a real POSTGRES_PASSWORD — docker compose reads this file
 docker compose up -d db
 ```
 
 Runs on host port **5433** (not the Postgres default 5432, so it can run alongside other
-Postgres containers without conflicting).
+Postgres containers without conflicting). This root `.env` only sets the Postgres container's
+password — it's separate from `backend/.env` in the next step, which is where that same
+password (and everything else) actually gets used by the app.
 
 ### 2. Backend
 
@@ -35,7 +38,8 @@ cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env   # then fill in real secrets — see Environment variables below
+cp .env.example .env   # fill in real secrets — see Environment variables below.
+                        # DATABASE_URL's password must match the root .env's POSTGRES_PASSWORD.
 alembic upgrade head
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
@@ -116,12 +120,18 @@ PENDING → IN_PROGRESS → COMPLETED
 
 ## Environment variables
 
+Three separate `.env` files, each copied from its own `.env.example`:
+
+- **`.env`** (root) — only `POSTGRES_PASSWORD`, read by `docker-compose.yml`.
+- **`backend/.env`** — everything the API needs.
+- **`frontend/.env.local`** — just `NEXT_PUBLIC_API_URL`.
+
 See `backend/.env.example` and `frontend/.env.example` for the full list. Notable ones:
 
 | Variable | Purpose |
 |---|---|
-| `DATABASE_URL` | Postgres connection string |
-| `JWT_SECRET` | Signs auth tokens — generate a real random value, don't use the example |
+| `DATABASE_URL` | Postgres connection string — password must match the root `.env`'s `POSTGRES_PASSWORD` |
+| `JWT_SECRET` | Signs auth tokens — generate one with `python -c "import secrets; print(secrets.token_urlsafe(32))"`, don't use the example value |
 | `EMAILJS_SERVICE_ID` / `EMAILJS_PUBLIC_KEY` / `EMAILJS_PRIVATE_KEY` | EmailJS account credentials |
 | `EMAILJS_PROSPECT_TEMPLATE_ID` | Template for the "we received your application" email |
 | `EMAILJS_ATTORNEY_TEMPLATE_ID` | Template for the "new lead submitted" notification |
